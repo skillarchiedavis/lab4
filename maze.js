@@ -1,31 +1,56 @@
-<script>
-var boundaries = document.querySelectorAll(".boundary");
-var start = document.querySelector("#start");
-var end = document.querySelector("#end");
-var status = document.querySelector("#status");
-var win = true;
+/*Exercise 1: Single boundary turns red
 
-   start.addEventListener("mouseover", function() {
-    document.getElementById("status").innerHTML = "Move your mouse over the S to begin";
-    for (var i = 0; i < boundaries.length; i++) {
-      boundaries[i].addEventListener("mouseover", function() {
-        win = false;
-        this.style.background = "red";
-        alert("YOU LOSE! START OVER!");
-        this.style.background = "#eeeeee";
-        document.getElementById("status").innerHTML = "YOU LOSE!"
-        stopPropagation();
-      });
-    }
-    
-  });
-	end.addEventListener("mouseover", function() {
-  if (win == true) {
-    document.getElementById("status").innerHTML = "YOU WIN!";
-    alert("CONGRATULATIONS! YOU WIN!");
-  }
-  win = true;
-});
+window.onload = function(){
+	
+	
+const boundary = document.getElementById("boundary1");
+	
+	
+boundary.onmouseover = function(){
+		
+boundary.classList.add("youlose");
+	
+};
+};
+*/
+loser = false;
+winner = false;
 
+window.onload = function(){
 
-</script>
+	
+	const boundaries = document.getElementById("maze").querySelectorAll(".boundary");
+	
+	const end = document.getElementById("end");
+	
+	const start = document.getElementById("start");
+
+	const maze = document.getElementById("maze");
+
+	
+	for (let i=0;i<boundaries.length;i++){
+
+		boundaries[i].addEventListener("mouseover", function(){
+		
+		if (winner == false){
+			
+			loser = true;
+			
+			for (i=0;i<boundaries.length;i++){
+				
+				boundaries[i].classList.add("youlose")
+			
+			}
+			
+			document.getElementById("status").textContent = "You Lose!";
+		
+	}
+	
+		});
+	
+	}
+
+	
+	
+
+};
