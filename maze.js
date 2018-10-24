@@ -26,9 +26,8 @@ window.onload = function(){
 	const start = document.getElementById("start");
 
 	const maze = document.getElementById("maze");
-
 	
-	for (let i=0;i<boundaries.length;i++){
+	for (var i=0;i<boundaries.length;i++){
 
 		boundaries[i].addEventListener("mouseover", function(){
 		
@@ -36,7 +35,7 @@ window.onload = function(){
 			
 			loser = true;
 			
-			for (i=0;i<boundaries.length;i++){
+			for (var i=0;i<boundaries.length;i++){
 				
 				boundaries[i].classList.add("youlose")
 			
@@ -70,9 +69,9 @@ window.onload = function(){
 		winner = false;
 		
 		document.getElementById("status").innerHTML = "Move your mouse over the &quot;S&quot; to begin.";
-		
-		for (let i=0;i<boundaries.length;i++){
-				
+	
+		for (var i=0;i<boundaries.length;i++){
+			
 			boundaries[i].classList.remove("youlose");
 			
 		}
@@ -86,7 +85,7 @@ window.onload = function(){
 			
 			document.getElementById("status").textContent = "You tried to cheat!";
 			
-			for (i=0;i<boundaries.length;i++){
+			for (var i=0;i<boundaries.length;i++){
 					
 				boundaries[i].classList.add("youlose")
 			}
