@@ -38,17 +38,28 @@ window.onload = function(){
 			
 			for (i=0;i<boundaries.length;i++){
 				
-				boundaries[i].classList.add("youlose")
+				boundaries[i].classList.add("you lose")
 			
 			}
-			
 			document.getElementById("status").textContent = "You Lose!";
+			
 		
 	}
 	
 		});
 	
 	}
+	
+	end.addEventListener("mouseover", function(){
+		
+	if (loser == false){
+			
+		document.getElementById("status").textContent = "You Win!";
+			
+		winner = true;
+		
+	}
+	});
 
 	
 	
