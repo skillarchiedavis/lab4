@@ -38,17 +38,18 @@ window.onload = function(){
 			
 			for (i=0;i<boundaries.length;i++){
 				
-				boundaries[i].classList.add("you lose")
+				boundaries[i].classList.add("youlose")
 			
 			}
-			document.getElementById("status").textContent = "You Lose!";
 			
+			document.getElementById("status").textContent = "You Lose!";
 		
 	}
 	
 		});
 	
 	}
+
 	
 	end.addEventListener("mouseover", function(){
 		
@@ -61,38 +62,40 @@ window.onload = function(){
 	}
 	});
 
+	
 	start.addEventListener("click", function(){
 		
-	loser = false;
+		loser = false;
 		
-	winner = false;
+		winner = false;
 		
-	document.getElementById("status").innerHTML = "Move your mouse over the &quot;S&quot; to begin.";
+		document.getElementById("status").innerHTML = "Move your mouse over the &quot;S&quot; to begin.";
 		
-	for (let i=0;i<boundaries.length;i++){
+		for (let i=0;i<boundaries.length;i++){
 				
-		boundaries[i].classList.remove("youlose");
+			boundaries[i].classList.remove("youlose");
 			
-	}
+		}
+	
 	});
 
 	
 	maze.onmouseleave = function(){
 		
-	if (winner == false){
+		if (winner == false){
 			
-		document.getElementById("status").textContent = "You cheated!";
+			document.getElementById("status").textContent = "You tried to cheat!";
 			
-		for (i=0;i<boundaries.length;i++){
+			for (i=0;i<boundaries.length;i++){
 					
-			boundaries[i].classList.add("you cheated")
+				boundaries[i].classList.add("youlose")
 			}
 		
 			loser = true;
-	
-	}
+		
+
+	    }
 	}
 
-	
 
 };
