@@ -61,7 +61,38 @@ window.onload = function(){
 	}
 	});
 
+	start.addEventListener("click", function(){
+		
+	loser = false;
+		
+	winner = false;
+		
+	document.getElementById("status").innerHTML = "Move your mouse over the &quot;S&quot; to begin.";
+		
+	for (let i=0;i<boundaries.length;i++){
+				
+		boundaries[i].classList.remove("youlose");
+			
+	}
+	});
+
 	
+	maze.onmouseleave = function(){
+		
+	if (winner == false){
+			
+		document.getElementById("status").textContent = "You cheated!";
+			
+		for (i=0;i<boundaries.length;i++){
+					
+			boundaries[i].classList.add("you cheated")
+			}
+		
+			loser = true;
+	
+	}
+	}
+
 	
 
 };
